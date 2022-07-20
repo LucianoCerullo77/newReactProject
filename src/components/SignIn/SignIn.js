@@ -1,10 +1,9 @@
 import React from 'react'
 import firebase from 'firebase'
 import { auth } from '../../firebase'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 function SignIn() {
-  
   function signInWithGoogle() {
     auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
   }
