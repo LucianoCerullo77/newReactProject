@@ -13,11 +13,11 @@ function Chat() {
   return (
     <div>
       <LogOut/>
-      {messages.map(({id, text, photoURL}) => {
+      {messages.map(({ id, text, photoURL }) => {
         <div key={id}>
-          <img src={photoURL} alt="userPhoto"/>
+          <img src={photoURL} alt="userPhoto" />
           <p>{text}</p>
-        </div>
+        </div>;
       })}
       <SendMessage/>
     </div>
