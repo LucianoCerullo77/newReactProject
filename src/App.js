@@ -1,12 +1,16 @@
 import './styles/App.css'
-import SingIn from './components/SingIn/SingIn';
 import Chat from './components/Chat/Chat';
+import SignIn from './components/SignIn/SignIn';
+import { auth } from './firebase';
+import {useAuthState} from 'react-firebase-hooks/auth'
+
 
 function App() {
+  const [user] = useAuthState(auth)
+
   return (
     <>
-    <SingIn/>
-    <Chat/>
+    {user ? <Chat/> : <SignIn/>}
     </>
   );
 }
